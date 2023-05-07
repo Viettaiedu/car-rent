@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Koenigsegg",
+    "price": 10000,
+    "capacity": "2 Person",
+    "mountOfGasoline": "90L",
+    "discount": 0,
+    "type": "Sport",
+    "makeOf": "Manual",
+    "category": "Popular",
+    "image": "12",
+    "createdBy": 1
+  },
+  {
+    "name": "Nissan GT - R",
+    "price": 80000,
+    "capacity": "2 Person",
+    "mountOfGasoline": "80L",
+    "discount": 0,
+    "type": "Sport",
+    "makeOf": "Manual",
+    "category": "Popular",
+    "image": "12",
+    "createdBy": 1
+  },
+  {
+    "name": "Koenigsegg",
+    "price": 10000,
+    "capacity": "2 Person",
+    "mountOfGasoline": "90L",
+    "discount": 20,
+    "type": "Sport",
+    "makeOf": "Manual",
+    "category": "Popular",
+    "image": "12",
+    "createdBy": 1
+  },
+  {
+    "name": "All New Rush",
+    "price": 80000,
+    "capacity": "2 Person",
+    "mountOfGasoline": "90L",
+    "discount": 5,
+    "type": "SUV",
+    "makeOf": "Manual",
+    "category": "Recommendation Car",
+    "image": "12",
+    "createdBy": 1
+  }
+]
