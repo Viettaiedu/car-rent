@@ -10,6 +10,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.hasMany(models.Product, { foreignKey: "product_user_fk" });
+      this.hasOne(models.Cart, { foreignKey: "cart_user_fk" });
+      this.hasOne(models.Address, { foreignKey: "user_address_fk" });
+      this.hasONe(models.Token, { foreignKey: "user_token_fk" });
     }
   }
   User.init(
@@ -17,11 +20,38 @@ module.exports = (sequelize, DataTypes) => {
       name: {
         type: DataTypes.STRING,
       },
-      providerId: {
+      email: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+          isEmail: true,
+        },
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        min: 6,
+      },
+      isVerified: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+      },
+      verificationToken: {
+        type: DataTypes.STRING,
+      },
+      verifiedDate: {
+        type: DataTypes.DATE,
+      },
+      passworkToken: {
+        type: DataTypes.STRING,
+      },
+      passworkTokenExpirationDate: {
+        type: DataTypes.DATE,
       },
       profilePic: {
+        type: DataTypes.STRING,
+      },
+      phoneNumber: {
         type: DataTypes.STRING,
       },
       role: {

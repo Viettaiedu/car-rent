@@ -12,11 +12,38 @@ module.exports = {
       name: {
         type: Sequelize.STRING,
       },
-      providerId: {
+      email: {
         type: Sequelize.STRING,
         allowNull: false,
+        validate: {
+          isEmail: true,
+        },
+      },
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        min: 6,
+      },
+      isVerified: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+      },
+      verificationToken: {
+        type: Sequelize.STRING,
+      },
+      verifiedDate: {
+        type: Sequelize.DATE,
+      },
+      passworkToken: {
+        type: Sequelize.STRING,
+      },
+      passworkTokenExpirationDate: {
+        type: Sequelize.DATE,
       },
       profilePic: {
+        type: Sequelize.STRING,
+      },
+      phoneNumber: {
         type: Sequelize.STRING,
       },
       role: {
@@ -26,11 +53,11 @@ module.exports = {
       },
       createdAt: {
         type: Sequelize.DATE,
-        defaultValue:new Date()
+        defaultValue: new Date(),
       },
       updatedAt: {
         type: Sequelize.DATE,
-        defaultValue:new Date()
+        defaultValue: new Date(),
       },
     });
   },
