@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onClick="handleVerify()">Verify email</button>
+    <script>
+      function handleVerify() {
+        const search = new URLSearchParams(window.location.search);
+        const verificationToken = search.get("token");
+        const email = search.get("email");
+        const url = "http://localhost:4000/api/v1/auth/verify-email";
+        const data = { verificationToken, email };
+        fetch(url, {
+          method: "POST", // *GET, POST, PUT, DELETE, etc.
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data), // body data type must match "Content-Type" header
+        })
+          .then((response) => response.json())
+          .then((json) => console.log(json));
+      }
+    </script>
+  </body>
+</html>

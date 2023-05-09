@@ -34,18 +34,13 @@ module.exports = {
       verifiedDate: {
         type: Sequelize.DATE,
       },
-      passworkToken: {
+      passwordToken: {
         type: Sequelize.STRING,
       },
-      passworkTokenExpirationDate: {
+      passwordTokenExpirationDate: {
         type: Sequelize.DATE,
       },
-      profilePic: {
-        type: Sequelize.STRING,
-      },
-      phoneNumber: {
-        type: Sequelize.STRING,
-      },
+
       role: {
         type: Sequelize.ENUM,
         values: ["admin", "user"],

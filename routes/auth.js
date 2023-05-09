@@ -1,23 +1,19 @@
 const { StatusCodes } = require("http-status-codes");
-
+const {
+  register,
+  login,
+  logout,
+  verifyEmail,
+  forgotPassword,
+  resetPassword,
+} = require("../controllers/auth");
+const { authenticateUser } = require("../middlewares/authentication");
 const router = require("express")();
 
+router.route("/register").post(register);
+router.route("/login").post(login);
+router.route("/logout").post(authenticateUser, logout);
+router.route("/verify-email").post(verifyEmail);
+router.route("/forgot-password").post(forgotPassword);
+router.route("/reset-password").post(resetPassword);
 module.exports = router;
-
-// Login google
-// const passport = require("passport");
-// router.get(
-//   "/google",
-//   passport.authenticate("google", { scope: ["profile", "email"] })
-// );
-// router.get(
-//   "/google/redirect",
-//   passport.authenticate("google"),
-//   async (req, res) => {
-//     res.json({ user: req.user });
-//   }
-// );
-// router.get("/logout", async (req, res) => {
-//   req.logout();
-//   res.status(StatusCodes.OK).json({ message: "user logged out" });
-// });

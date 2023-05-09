@@ -31,6 +31,12 @@ module.exports = (sequelize, DataTypes) => {
       village: {
         type: DataTypes.STRING,
       },
+      profilePic: {
+        type: DataTypes.STRING,
+      },
+      phoneNumber: {
+        type: DataTypes.STRING,
+      },
     },
     {
       sequelize,
